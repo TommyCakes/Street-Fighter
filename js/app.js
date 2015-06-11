@@ -25,14 +25,25 @@ $(document).ready(function() {
 		$('.ryu-ready').show();
 		//ryu goes back to ready position
 		});
-$(document).keydown(function(event) {
-    switch (event.keyCode) {
-    case 88: $('.ryu-ready').hide();
-    		 $('.ryu-cool').show();
+	$('body').on('keydown', function(e) {
+    	if(e.which == 88) {
+    		e.preventDefault();
     		 playJazz ();
+    		 $('.ryu-ready').hide();
+    		 $('.ryu-cool').show();
+    		}
+    		else {
+    			return false;
     		}
 });
+	$('body').on('keyup', function() {
+			 $('.ryu-cool').hide();
+    		 $('.ryu-ready').show();
+
+
+
    });
+});
 
 	function playHadouken() {
         $('#hadouken-sound')[0].volume = 0.5;
