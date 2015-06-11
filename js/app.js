@@ -20,16 +20,27 @@ $(document).ready(function() {
 		  	$(this).css('left', '520px');
 		  });
 		})
-		//show Hadouken
 	.mouseup(function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
 		//ryu goes back to ready position
-
-	});
+		});
+$(document).keydown(function(event) {
+    switch (event.keyCode) {
+    case 88: $('.ryu-ready').hide();
+    		 $('.ryu-cool').show();
+    		 playJazz ();
+    		}
 });
-	function playHadouken () {
-		$('#hadouken-sound') [0].voulme = 0.5;
-		$('#hadouken-sound') [0].load();
-		$('#hadouken-sound') [0].play();
-	};
+   });
+
+	function playHadouken() {
+        $('#hadouken-sound')[0].volume = 0.5;
+        $('#hadouken-sound')[0].load();
+        $('#hadouken-sound')[0].play();
+    }
+    function playJazz () {
+    	$('#jazz-track') [0].volume = 0.5;
+    	$('#jazz-track') [0].load();
+    	$('#jazz-track') [0].play();
+    }
