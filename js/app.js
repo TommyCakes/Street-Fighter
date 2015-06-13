@@ -28,7 +28,6 @@ $(document).ready(function() {
 	$('body').on('keydown', function(e) {
     	if(e.which == 88) {
     		e.preventDefault();
-    		 playJazz ();
     		 $('.ryu-ready').hide();
     		 $('.ryu-cool').show();
     		}
